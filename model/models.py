@@ -21,7 +21,6 @@ class CompGCNBase(BaseModel):
 		self.edge_type		= edge_type
 		self.p.gcn_dim		= self.p.embed_dim if self.p.gcn_layer == 1 else self.p.gcn_dim
 		self.init_embed		= get_param((self.p.num_ent,   self.p.init_dim))
-		self.device		= self.edge_index.device
 
 		if self.p.num_bases > 0:
 			self.init_rel  = get_param((self.p.num_bases,   self.p.init_dim))
